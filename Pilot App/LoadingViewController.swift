@@ -8,41 +8,24 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController,UIViewControllerTransitioningDelegate {
+class LoadingViewController: UIViewController {
 
     let activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
-    let transition = Animator()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityView.color = UIColor.orangeColor()
         activityView.center = view.center
         activityView.startAnimating()
         self.view.addSubview(activityView)
-        super.modalTransitionStyle = .CrossDissolve
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // animation methods
-    func animationControllerForPresentedController(
-        presented: UIViewController,
-        presentingController presenting: UIViewController,
-                             sourceController source: UIViewController) ->
-        UIViewControllerAnimatedTransitioning? {
-            
-            return transition
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        sleep(1)
+        let loginViewcontroller:LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        presentViewController(loginViewcontroller, animated: true, completion: {self.activityView.stopAnimating()})
     }
-    
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
-    }
-
 }
 
 
