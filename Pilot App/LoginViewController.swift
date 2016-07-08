@@ -8,31 +8,35 @@
 
 import UIKit
 
-class LoginViewController:UIViewController, UITextFieldDelegate {
-    
+class LoginViewController:UIViewController{
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func login(sender: AnyObject) {
-        let username = usernameTextField.text!
-        let password = passwordTextField.text!
-        if(!Util.isEmailValid(username)){
+        guard let username = usernameTextField.text where username.isValidEmail() else {
             let okAction = UIAlertAction(title: "OK", style: .Default, handler: {(_)->Void in self.usernameTextField.becomeFirstResponder()})
-            Util.displayAlert(self, title: "Invalid Username", message: "Please enter a valid email", actions: okAction)
+            UIUtil.displayAlert(self, title: "Invalid Username", message: "Please enter a valid email", actions: okAction)
             return
         }
-        if(!Util.isPasswordValid(password)){
+        
+        guard let password = passwordTextField.text where password.isValidPassword() else{
             let okAction = UIAlertAction(title: "OK", style: .Default, handler: {(_)->Void in self.passwordTextField.becomeFirstResponder()})
-            Util.displayAlert(self, title: "Invalid Password", message: "Password should be 6 characters long, should contain alphabets and numbers", actions: okAction)
+            UIUtil.displayAlert(self, title: "Invalid Password", message: "Password should be 6 characters long, should contain alphabets and numbers", actions: okAction)
             return
         }
-        let welcomePage = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("WelcomePage")
-        presentViewController(welcomePage, animated: true, completion: nil)
+        
+        UserUtil.createNewUser(username, password: password)
+        showHomeScreen(transitionDelegate: self)
     }
     
-    
-    
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        view.endEditing(true)
+    }
+   
+}
+
+extension LoginViewController: UITextFieldDelegate{
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if(textField == usernameTextField){
             passwordTextField.becomeFirstResponder()
@@ -41,15 +45,10 @@ class LoginViewController:UIViewController, UITextFieldDelegate {
         }
         return true;
     }
-    
-    
-    
-    func login(){
-        print("logging in")
+}
+
+extension LoginViewController: UIViewControllerTransitioningDelegate{
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissAnimator()
     }
-    
-    @IBAction func dismissKeyboard(sender: AnyObject) {
-        view.endEditing(true)
-    }
- 
 }

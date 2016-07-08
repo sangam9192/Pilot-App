@@ -12,9 +12,15 @@
 		BF0C41FD1D2AE7DF0010D1AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0C41FB1D2AE7DF0010D1AD /* Main.storyboard */; };
 		BF0C41FF1D2AE7DF0010D1AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0C41FE1D2AE7DF0010D1AD /* Assets.xcassets */; };
 		BF0C42021D2AE7DF0010D1AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0C42001D2AE7DF0010D1AD /* LaunchScreen.storyboard */; };
-		BF0C420E1D2B78840010D1AD /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0C420D1D2B78840010D1AD /* Animator.swift */; };
+		BF0C420E1D2B78840010D1AD /* FadeInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0C420D1D2B78840010D1AD /* FadeInAnimator.swift */; };
 		BF21F3C11D2C12AE00DDD11A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21F3C01D2C12AE00DDD11A /* LoginViewController.swift */; };
 		BF21F3C51D2C477800DDD11A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21F3C41D2C477800DDD11A /* Util.swift */; };
+		BF9F0A651D2D694D00A425C4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0A641D2D694D00A425C4 /* HomeViewController.swift */; };
+		BF9F0A671D2D6A0B00A425C4 /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0A661D2D6A0B00A425C4 /* UIUtil.swift */; };
+		BF9F0A691D2D7EC800A425C4 /* UserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0A681D2D7EC800A425C4 /* UserUtil.swift */; };
+		BFCB7E881D2FD48200A22F7D /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB7E871D2FD48200A22F7D /* KeychainSwift.swift */; };
+		BFCB7E8A1D2FFA1200A22F7D /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB7E891D2FFA1200A22F7D /* PushAnimator.swift */; };
+		BFCB7E8C1D30091800A22F7D /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB7E8B1D30091800A22F7D /* DismissAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +31,15 @@
 		BF0C41FE1D2AE7DF0010D1AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0C42011D2AE7DF0010D1AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF0C42031D2AE7DF0010D1AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF0C420D1D2B78840010D1AD /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		BF0C420D1D2B78840010D1AD /* FadeInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInAnimator.swift; sourceTree = "<group>"; };
 		BF21F3C01D2C12AE00DDD11A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF21F3C41D2C477800DDD11A /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		BF9F0A641D2D694D00A425C4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BF9F0A661D2D6A0B00A425C4 /* UIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtil.swift; sourceTree = "<group>"; };
+		BF9F0A681D2D7EC800A425C4 /* UserUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUtil.swift; sourceTree = "<group>"; };
+		BFCB7E871D2FD48200A22F7D /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
+		BFCB7E891D2FFA1200A22F7D /* PushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
+		BFCB7E8B1D30091800A22F7D /* DismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +73,46 @@
 			isa = PBXGroup;
 			children = (
 				BF0C41F71D2AE7DF0010D1AD /* AppDelegate.swift */,
-				BF0C420D1D2B78840010D1AD /* Animator.swift */,
+				BFCB7E8D1D3033C000A22F7D /* animators */,
+				BFCB7E8E1D30344C00A22F7D /* view */,
+				BFCB7E8F1D30348300A22F7D /* util */,
+				BF0C41FE1D2AE7DF0010D1AD /* Assets.xcassets */,
+			);
+			path = "Pilot App";
+			sourceTree = "<group>";
+		};
+		BFCB7E8D1D3033C000A22F7D /* animators */ = {
+			isa = PBXGroup;
+			children = (
+				BF0C420D1D2B78840010D1AD /* FadeInAnimator.swift */,
+				BFCB7E891D2FFA1200A22F7D /* PushAnimator.swift */,
+				BFCB7E8B1D30091800A22F7D /* DismissAnimator.swift */,
+			);
+			name = animators;
+			sourceTree = "<group>";
+		};
+		BFCB7E8E1D30344C00A22F7D /* view */ = {
+			isa = PBXGroup;
+			children = (
 				BF21F3C01D2C12AE00DDD11A /* LoginViewController.swift */,
 				BF0C41F91D2AE7DF0010D1AD /* LoadingViewController.swift */,
 				BF0C41FB1D2AE7DF0010D1AD /* Main.storyboard */,
-				BF0C41FE1D2AE7DF0010D1AD /* Assets.xcassets */,
 				BF0C42001D2AE7DF0010D1AD /* LaunchScreen.storyboard */,
+				BF9F0A641D2D694D00A425C4 /* HomeViewController.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		BFCB7E8F1D30348300A22F7D /* util */ = {
+			isa = PBXGroup;
+			children = (
+				BFCB7E871D2FD48200A22F7D /* KeychainSwift.swift */,
 				BF0C42031D2AE7DF0010D1AD /* Info.plist */,
 				BF21F3C41D2C477800DDD11A /* Util.swift */,
+				BF9F0A661D2D6A0B00A425C4 /* UIUtil.swift */,
+				BF9F0A681D2D7EC800A425C4 /* UserUtil.swift */,
 			);
-			path = "Pilot App";
+			name = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +187,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF21F3C11D2C12AE00DDD11A /* LoginViewController.swift in Sources */,
-				BF0C420E1D2B78840010D1AD /* Animator.swift in Sources */,
+				BF0C420E1D2B78840010D1AD /* FadeInAnimator.swift in Sources */,
 				BF21F3C51D2C477800DDD11A /* Util.swift in Sources */,
+				BF9F0A671D2D6A0B00A425C4 /* UIUtil.swift in Sources */,
 				BF0C41FA1D2AE7DF0010D1AD /* LoadingViewController.swift in Sources */,
+				BFCB7E8A1D2FFA1200A22F7D /* PushAnimator.swift in Sources */,
+				BFCB7E8C1D30091800A22F7D /* DismissAnimator.swift in Sources */,
+				BF9F0A651D2D694D00A425C4 /* HomeViewController.swift in Sources */,
+				BF9F0A691D2D7EC800A425C4 /* UserUtil.swift in Sources */,
+				BFCB7E881D2FD48200A22F7D /* KeychainSwift.swift in Sources */,
 				BF0C41F81D2AE7DF0010D1AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +309,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Pilot App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sangam.Pilot-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -272,10 +323,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Pilot App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sangam.Pilot-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
