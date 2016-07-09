@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "LoginViewController.login(AnyObject) -&gt; ():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.presentingViewController == UIStoryboard(name: &quot;Main&quot;, bundle:nil).instantiateViewControllerWithIdentifier(&quot;LoadingScreen&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "static UserUtil.createNewUser(String, password : String) -&gt; ():UserUtil.swift">
          <PersistentStrings>
             <PersistentString

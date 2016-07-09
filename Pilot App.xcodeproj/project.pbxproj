@@ -19,11 +19,12 @@
 		BF9F0A671D2D6A0B00A425C4 /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0A661D2D6A0B00A425C4 /* UIUtil.swift */; };
 		BF9F0A691D2D7EC800A425C4 /* UserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0A681D2D7EC800A425C4 /* UserUtil.swift */; };
 		BFCB7E881D2FD48200A22F7D /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB7E871D2FD48200A22F7D /* KeychainSwift.swift */; };
-		BFCB7E8A1D2FFA1200A22F7D /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB7E891D2FFA1200A22F7D /* PushAnimator.swift */; };
-		BFCB7E8C1D30091800A22F7D /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB7E8B1D30091800A22F7D /* DismissAnimator.swift */; };
 		BFCB7E9F1D30532400A22F7D /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCB7E9C1D30532400A22F7D /* Icon-60.png */; };
 		BFCB7EA01D30532400A22F7D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCB7E9D1D30532400A22F7D /* Icon-60@2x.png */; };
 		BFCB7EA11D30532400A22F7D /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFCB7E9E1D30532400A22F7D /* Icon-60@3x.png */; };
+		BFEFE3511D311DC700B1572E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFE3501D311DC700B1572E /* Constants.swift */; };
+		BFEFE3531D31257200B1572E /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFE3521D31257200B1572E /* DismissAnimator.swift */; };
+		BFEFE3551D31295F00B1572E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFE3541D31295F00B1572E /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,11 +42,12 @@
 		BF9F0A661D2D6A0B00A425C4 /* UIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtil.swift; sourceTree = "<group>"; };
 		BF9F0A681D2D7EC800A425C4 /* UserUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUtil.swift; sourceTree = "<group>"; };
 		BFCB7E871D2FD48200A22F7D /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
-		BFCB7E891D2FFA1200A22F7D /* PushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
-		BFCB7E8B1D30091800A22F7D /* DismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
 		BFCB7E9C1D30532400A22F7D /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		BFCB7E9D1D30532400A22F7D /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		BFCB7E9E1D30532400A22F7D /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		BFEFE3501D311DC700B1572E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BFEFE3521D31257200B1572E /* DismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
+		BFEFE3541D31295F00B1572E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +80,11 @@
 		BF0C41F61D2AE7DF0010D1AD /* Pilot App */ = {
 			isa = PBXGroup;
 			children = (
-				BFCB7EA21D30538600A22F7D /* resources */,
 				BF0C41F71D2AE7DF0010D1AD /* AppDelegate.swift */,
 				BFCB7E8D1D3033C000A22F7D /* animators */,
 				BFCB7E8E1D30344C00A22F7D /* view */,
 				BFCB7E8F1D30348300A22F7D /* util */,
-				BF0C41FE1D2AE7DF0010D1AD /* Assets.xcassets */,
+				BFCB7EA21D30538600A22F7D /* resources */,
 			);
 			path = "Pilot App";
 			sourceTree = "<group>";
@@ -92,8 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0C420D1D2B78840010D1AD /* FadeInAnimator.swift */,
-				BFCB7E891D2FFA1200A22F7D /* PushAnimator.swift */,
-				BFCB7E8B1D30091800A22F7D /* DismissAnimator.swift */,
+				BFEFE3521D31257200B1572E /* DismissAnimator.swift */,
 			);
 			name = animators;
 			sourceTree = "<group>";
@@ -118,6 +118,8 @@
 				BF21F3C41D2C477800DDD11A /* Util.swift */,
 				BF9F0A661D2D6A0B00A425C4 /* UIUtil.swift */,
 				BF9F0A681D2D7EC800A425C4 /* UserUtil.swift */,
+				BFEFE3501D311DC700B1572E /* Constants.swift */,
+				BFEFE3541D31295F00B1572E /* Error.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -125,6 +127,7 @@
 		BFCB7EA21D30538600A22F7D /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF0C41FE1D2AE7DF0010D1AD /* Assets.xcassets */,
 				BFCB7E9C1D30532400A22F7D /* Icon-60.png */,
 				BFCB7E9D1D30532400A22F7D /* Icon-60@2x.png */,
 				BFCB7E9E1D30532400A22F7D /* Icon-60@3x.png */,
@@ -210,9 +213,10 @@
 				BF0C420E1D2B78840010D1AD /* FadeInAnimator.swift in Sources */,
 				BF21F3C51D2C477800DDD11A /* Util.swift in Sources */,
 				BF9F0A671D2D6A0B00A425C4 /* UIUtil.swift in Sources */,
+				BFEFE3551D31295F00B1572E /* Error.swift in Sources */,
 				BF0C41FA1D2AE7DF0010D1AD /* LoadingViewController.swift in Sources */,
-				BFCB7E8A1D2FFA1200A22F7D /* PushAnimator.swift in Sources */,
-				BFCB7E8C1D30091800A22F7D /* DismissAnimator.swift in Sources */,
+				BFEFE3511D311DC700B1572E /* Constants.swift in Sources */,
+				BFEFE3531D31257200B1572E /* DismissAnimator.swift in Sources */,
 				BF9F0A651D2D694D00A425C4 /* HomeViewController.swift in Sources */,
 				BF9F0A691D2D7EC800A425C4 /* UserUtil.swift in Sources */,
 				BFCB7E881D2FD48200A22F7D /* KeychainSwift.swift in Sources */,

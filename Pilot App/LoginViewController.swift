@@ -13,21 +13,31 @@ class LoginViewController:UIViewController{
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var dismissToHomePage:Bool = false
+    
     @IBAction func login(sender: AnyObject) {
+        
         guard let username = usernameTextField.text where username.isValidEmail() else {
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: {(_)->Void in self.usernameTextField.becomeFirstResponder()})
-            UIUtil.displayAlert(self, title: "Invalid Username", message: "Please enter a valid email", actions: okAction)
+            let okAction = UIAlertAction(title: Constants.OK, style: .Default,
+                                handler: {_ in self.usernameTextField.becomeFirstResponder()})
+            UIUtil.displayAlert(self, title: Error.INVALID_USERNAME.title, message: Error.INVALID_USERNAME.message, actions: okAction)
             return
         }
         
         guard let password = passwordTextField.text where password.isValidPassword() else{
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: {(_)->Void in self.passwordTextField.becomeFirstResponder()})
-            UIUtil.displayAlert(self, title: "Invalid Password", message: "Password should be 6 characters long, should contain alphabets and numbers", actions: okAction)
+            let okAction = UIAlertAction(title: Constants.OK, style: .Default,
+                                         handler: {_ in self.passwordTextField.becomeFirstResponder()})
+            UIUtil.displayAlert(self, title: Error.INVALID_PASSWORD.title, message: Error.INVALID_PASSWORD.message, actions: okAction)
             return
         }
-        
+                
         UserUtil.createNewUser(username, password: password)
-        showHomeScreen(transitionDelegate: self)
+        
+        if dismissToHomePage {
+            showHomeScreen(transitionDelegate: self)
+        } else {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     @IBAction func dismissKeyboard(sender: AnyObject) {

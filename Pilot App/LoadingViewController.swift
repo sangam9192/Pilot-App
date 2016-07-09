@@ -14,7 +14,7 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityView.color = UIColor.blueColor()
+        activityView.color = UIColor.blackColor()
         activityView.center = view.center
         activityView.startAnimating()
         self.view.addSubview(activityView)
@@ -23,7 +23,7 @@ class LoadingViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let completion:()->Void = { _ in self.activityView.stopAnimating()}
-        UserUtil.isUserLoggedIn() ? self.showHomeScreen(transitionDelegate:self, completion: completion) : self.showLoginScreen(transitionDelegate: self, completion: completion)
+        UserUtil.isUserLoggedIn() ? self.showHomeScreen(transitionDelegate:self, completion: completion) : self.showLoginScreen(transitionDelegate: self,completion: completion, dismissToHomePage:true)
     }
 }
 

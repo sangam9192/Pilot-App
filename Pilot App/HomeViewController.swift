@@ -13,18 +13,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewWillAppear(animated: Bool) {
-        usernameLabel.text = "\(UserUtil.userName)"
+        super.viewWillAppear(animated)
+        usernameLabel.text = "\(UserUtil.username)"
     }
     
     @IBAction func logout(sender: AnyObject) {
         UserUtil.logout()
-        self.showLoginScreen(transitionDelegate: self)
+        showLoginScreen()
     }
     
-}
-
-extension HomeViewController: UIViewControllerTransitioningDelegate{
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PushAnimator()
-    }
 }

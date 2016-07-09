@@ -20,12 +20,12 @@ struct UIUtil {
     }
     
     static func presentViewController(fromView :UIViewController, viewControllerIdentifierToPresent :String ,transitionDelegate:UIViewControllerTransitioningDelegate? = nil,
-                                      storyBoardName : String = "Main", animated flag: Bool = true, completion : (() -> Void)? = nil){
-        let welcomePage = UIStoryboard(name: storyBoardName, bundle:nil).instantiateViewControllerWithIdentifier(viewControllerIdentifierToPresent)
+                                      storyBoardName : String = Constants.MAIN, animated flag: Bool = true, completion : (() -> Void)? = nil){
+        let vcToPresent = UIStoryboard(name: storyBoardName, bundle:nil).instantiateViewControllerWithIdentifier(viewControllerIdentifierToPresent)
         if let transition = transitionDelegate {
-            welcomePage.transitioningDelegate = transition
+            vcToPresent.transitioningDelegate = transition
         }
-        fromView.presentViewController(welcomePage, animated: flag, completion: completion)
+        fromView.presentViewController(vcToPresent, animated: flag, completion: completion)
     }
     
 }
@@ -33,13 +33,18 @@ struct UIUtil {
 extension UIViewController{
     
     func showHomeScreen(transitionDelegate transitionDelegate:UIViewControllerTransitioningDelegate? = nil,animated flag: Bool = true, completion : (() -> Void)? = nil){
-            UIUtil.presentViewController(self, viewControllerIdentifierToPresent: "HomeScreen", animated: flag, completion: completion, transitionDelegate: transitionDelegate)
+        UIUtil.presentViewController(self, viewControllerIdentifierToPresent: Constants.NAVIGATION_CONTROLLER, animated: flag, completion: completion, transitionDelegate: transitionDelegate)
     }
         
-    func showLoginScreen(transitionDelegate transitionDelegate:UIViewControllerTransitioningDelegate? = nil,animated flag: Bool = true, completion : (() -> Void)? = nil){
-            UIUtil.presentViewController(self, viewControllerIdentifierToPresent: "LoginScreen", animated: flag, completion: completion,transitionDelegate: transitionDelegate)
+    func showLoginScreen(transitionDelegate transitionDelegate:UIViewControllerTransitioningDelegate? = nil,animated flag: Bool = true, dismissToHomePage:Bool=false, completion : (() -> Void)? = nil){
+        
+        let vcToPresent = UIStoryboard(name: Constants.MAIN, bundle:nil).instantiateViewControllerWithIdentifier(Constants.LOGIN_SCREEN) as! LoginViewController
+        vcToPresent.dismissToHomePage = dismissToHomePage
+        if let transition = transitionDelegate {
+            vcToPresent.transitioningDelegate = transition
+        }
+        self.presentViewController(vcToPresent, animated: flag, completion: completion)
     }
-
 }
     
 

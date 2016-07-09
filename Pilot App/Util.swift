@@ -19,7 +19,7 @@ extension String{
 extension String {
     func isValidPassword() -> Bool {
         let passwordRegex = "\\w{6,}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
-        return emailTest.evaluateWithObject(self)
+        let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
+        return passwordTest.evaluateWithObject(self)
     }
 }

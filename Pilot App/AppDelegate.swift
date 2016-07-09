@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        if let username = NSUserDefaults.standardUserDefaults().objectForKey("username") as? String{
-            UserUtil.userName = username
+        if let username = NSUserDefaults.standardUserDefaults().objectForKey(Constants.USERNAME) as? String{
+            UserUtil.username = username
         }
         return true
     }
