@@ -12,39 +12,50 @@ struct UIUtil {
     
     static func displayAlert(viewController:UIViewController, title:String, message:String,
                              completion:(()->Void)?=nil, animated:Bool=true, preferredStyle:UIAlertControllerStyle = .Alert, actions:UIAlertAction...){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         for action in actions {
             alertController.addAction(action)
         }
         viewController.presentViewController(alertController, animated: animated, completion: completion)
     }
     
-    static func presentViewController(fromView :UIViewController, viewControllerIdentifierToPresent :String ,transitionDelegate:UIViewControllerTransitioningDelegate? = nil,
+    static func presentViewController(fromVC fromVC :UIViewController, vcIdentifierToPresent :String, useToVcAsTransitionDelegate:Bool = false,
+                                      modaltransitionStyle:UIModalTransitionStyle? = nil, transitionDelegate:UIViewControllerTransitioningDelegate? = nil,
                                       storyBoardName : String = Constants.MAIN, animated flag: Bool = true, completion : (() -> Void)? = nil){
-        let vcToPresent = UIStoryboard(name: storyBoardName, bundle:nil).instantiateViewControllerWithIdentifier(viewControllerIdentifierToPresent)
-        if let transition = transitionDelegate {
-            vcToPresent.transitioningDelegate = transition
+        let toVC = UIStoryboard(name: storyBoardName, bundle:nil).instantiateViewControllerWithIdentifier(vcIdentifierToPresent)
+        toVC.transitioningDelegate = transitionDelegate
+        if useToVcAsTransitionDelegate {
+            toVC.transitioningDelegate = toVC as? UIViewControllerTransitioningDelegate
         }
-        fromView.presentViewController(vcToPresent, animated: flag, completion: completion)
+        if let transitionStyle = modaltransitionStyle {
+            toVC.modalTransitionStyle = transitionStyle
+        }
+        fromVC.presentViewController(toVC, animated: flag, completion: completion)
     }
     
 }
 
-extension UIViewController{
-    
-    func showHomeScreen(transitionDelegate transitionDelegate:UIViewControllerTransitioningDelegate? = nil,animated flag: Bool = true, completion : (() -> Void)? = nil){
-        UIUtil.presentViewController(self, viewControllerIdentifierToPresent: Constants.NAVIGATION_CONTROLLER, animated: flag, completion: completion, transitionDelegate: transitionDelegate)
+extension UIViewController {
+
+    func showHomeScreen(useToVcAsTransitionDelegate:Bool = false,
+                               modaltransitionStyle:UIModalTransitionStyle? = nil, transitionDelegate:UIViewControllerTransitioningDelegate? = nil,
+                               storyBoardName : String = Constants.MAIN, animated flag: Bool = true, completion : (() -> Void)? = nil){
+        UIUtil.presentViewController(fromVC: self, vcIdentifierToPresent: Constants.HOME_SCREEN, useToVcAsTransitionDelegate: useToVcAsTransitionDelegate, modaltransitionStyle: modaltransitionStyle, transitionDelegate: transitionDelegate, animated : flag, completion: completion)
     }
-        
-    func showLoginScreen(transitionDelegate transitionDelegate:UIViewControllerTransitioningDelegate? = nil,animated flag: Bool = true, dismissToHomePage:Bool=false, completion : (() -> Void)? = nil){
-        
-        let vcToPresent = UIStoryboard(name: Constants.MAIN, bundle:nil).instantiateViewControllerWithIdentifier(Constants.LOGIN_SCREEN) as! LoginViewController
-        vcToPresent.dismissToHomePage = dismissToHomePage
-        if let transition = transitionDelegate {
-            vcToPresent.transitioningDelegate = transition
+
+    func showLoginScreen(useToVcAsTransitionDelegate:Bool = false,
+                         modaltransitionStyle:UIModalTransitionStyle? = nil, transitionDelegate:UIViewControllerTransitioningDelegate? = nil,
+                         storyBoardName : String = Constants.MAIN, animated flag: Bool = true, dismissToHomePage:Bool = false, completion : (() -> Void)? = nil){
+        let toVC = UIStoryboard(name: storyBoardName, bundle:nil).instantiateViewControllerWithIdentifier(Constants.LOGIN_SCREEN) as! LoginViewController
+        toVC.transitioningDelegate = transitionDelegate
+        if useToVcAsTransitionDelegate {
+            toVC.transitioningDelegate = toVC
         }
-        self.presentViewController(vcToPresent, animated: flag, completion: completion)
+        if let transitionStyle = modaltransitionStyle {
+            toVC.modalTransitionStyle = transitionStyle
+        }
+        toVC.dismissToHomePage = dismissToHomePage
+        self.presentViewController(toVC, animated: flag, completion: completion)
     }
 }
-    
 

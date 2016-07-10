@@ -23,13 +23,10 @@ class LoadingViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let completion:()->Void = { _ in self.activityView.stopAnimating()}
-        UserUtil.isUserLoggedIn() ? self.showHomeScreen(transitionDelegate:self, completion: completion) : self.showLoginScreen(transitionDelegate: self,completion: completion, dismissToHomePage:true)
-    }
-}
+        
+        UserUtil.isUserLoggedIn() ? showHomeScreen(modaltransitionStyle: .CrossDissolve, completion:completion) : showLoginScreen(modaltransitionStyle: .CrossDissolve, dismissToHomePage:true)
 
-extension LoadingViewController: UIViewControllerTransitioningDelegate{
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return FadeInAnimator()
     }
+
 }
 

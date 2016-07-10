@@ -104,77 +104,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilot App/UIUtil.swift"
-            timestampString = "489700394.018298"
+            timestampString = "489842524.042467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "presentViewController(_:viewControllerIdentifierToPresent:transitionDelegate:storyBoardName:animated:completion:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "presentViewController(fromVC:vcIdentifierToPresent:useToVcAsTransitionDelegate:modaltransitionStyle:transitionDelegate:storyBoardName:animated:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilot App/LoadingViewController.swift"
-            timestampString = "489682452.816549"
+            timestampString = "489853364.138205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pilot App/UIUtil.swift"
-            timestampString = "489754979.401756"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "presentViewController(_:viewControllerIdentifierToPresent:transitionDelegate:storyBoardName:animated:completion:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Pilot_App.UIUtil.presentViewController (__ObjC.UIViewController, viewControllerIdentifierToPresent : Swift.String, transitionDelegate : Swift.Optional&lt;__ObjC.UIViewControllerTransitioningDelegate&gt;, storyBoardName : Swift.String, animated : Swift.Bool, completion : Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "Pilot App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sangamk/Desktop/ws/Pilot%20App/Pilot%20App/UIUtil.swift"
-                  timestampString = "489755238.832365"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "356">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Pilot_App.UIUtil.presentViewController (__ObjC.UIViewController, viewControllerIdentifierToPresent : Swift.String, transitionDelegate : Swift.Optional&lt;__ObjC.UIViewControllerTransitioningDelegate&gt;, storyBoardName : Swift.String, animated : Swift.Bool, completion : Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "Pilot App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sangamk/Desktop/ws/Pilot%20App/Pilot%20App/UIUtil.swift"
-                  timestampString = "489755238.832587"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "397">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -228,16 +180,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilot App/LoadingViewController.swift"
-            timestampString = "489784969.140014"
+            timestampString = "489853127.176047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
             landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilot App/UIUtil.swift"
+            timestampString = "489843214.495661"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "showLoginScreen(_:modaltransitionStyle:transitionDelegate:storyBoardName:animated:dismissToHomePage:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
