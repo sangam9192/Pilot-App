@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Loading View Controller-->
@@ -28,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QRe-se-nrb" firstAttribute="top" secondItem="fg3-Wp-jqi" secondAttribute="bottom" constant="150" id="5ay-5x-6mL"/>
                             <constraint firstItem="fg3-Wp-jqi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MMe-le-goT"/>
@@ -54,54 +55,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1xW-Pf-VuF">
-                                <rect key="frame" x="120" y="164" width="135" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1xW-Pf-VuF">
+                                <rect key="frame" x="94" y="164" width="187.5" height="51.5"/>
+                                <color key="textColor" red="0.0" green="0.5568627451" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="O7v-PC-Ffv" id="LSR-Ze-meH"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BK8-39-5gg">
-                                <rect key="frame" x="123" y="225" width="128.5" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BK8-39-5gg">
+                                <rect key="frame" x="94" y="246.5" width="187.5" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.5568627451" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="O7v-PC-Ffv" id="pmy-99-8O4"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilot App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKc-jg-2gu">
+                                <rect key="frame" x="127" y="88" width="120" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.5568627451" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdb-gg-KLp">
-                                <rect key="frame" x="165" y="305" width="45" height="33"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <rect key="frame" x="94" y="337" width="187.5" height="51"/>
+                                <color key="backgroundColor" red="0.0" green="0.5568627451" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="1" height="1"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="O7v-PC-Ffv" eventType="touchUpInside" id="7uy-fY-evF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilot App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKc-jg-2gu">
-                                <rect key="frame" x="127" y="88" width="120" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BK8-39-5gg" firstAttribute="top" secondItem="1xW-Pf-VuF" secondAttribute="bottom" constant="31" id="0k7-n1-jFm"/>
+                            <constraint firstItem="1xW-Pf-VuF" firstAttribute="height" secondItem="Z3L-mY-73J" secondAttribute="height" multiplier="1:13" id="1Q7-1b-LWo"/>
+                            <constraint firstItem="BK8-39-5gg" firstAttribute="height" secondItem="1xW-Pf-VuF" secondAttribute="height" id="5pA-HN-MdP"/>
+                            <constraint firstItem="hdb-gg-KLp" firstAttribute="height" secondItem="BK8-39-5gg" secondAttribute="height" id="JSK-YF-PLt"/>
                             <constraint firstItem="1xW-Pf-VuF" firstAttribute="top" secondItem="KKc-jg-2gu" secondAttribute="bottom" constant="40" id="JuQ-gB-2Uo"/>
                             <constraint firstItem="hdb-gg-KLp" firstAttribute="centerX" secondItem="Z3L-mY-73J" secondAttribute="centerX" id="RRJ-pQ-ZPI"/>
                             <constraint firstItem="1xW-Pf-VuF" firstAttribute="centerX" secondItem="Z3L-mY-73J" secondAttribute="centerX" id="Snn-pL-zcb"/>
+                            <constraint firstItem="1xW-Pf-VuF" firstAttribute="width" secondItem="Z3L-mY-73J" secondAttribute="width" multiplier="1:2" id="WU3-JF-E08"/>
                             <constraint firstItem="BK8-39-5gg" firstAttribute="centerX" secondItem="1xW-Pf-VuF" secondAttribute="centerX" id="XaZ-5W-hBT"/>
-                            <constraint firstItem="hdb-gg-KLp" firstAttribute="top" secondItem="BK8-39-5gg" secondAttribute="bottom" constant="50" id="ceb-CH-Bbi"/>
+                            <constraint firstItem="hdb-gg-KLp" firstAttribute="width" secondItem="BK8-39-5gg" secondAttribute="width" id="cb7-Be-wtz"/>
+                            <constraint firstItem="hdb-gg-KLp" firstAttribute="top" secondItem="BK8-39-5gg" secondAttribute="bottom" constant="40" id="ceb-CH-Bbi"/>
                             <constraint firstItem="1xW-Pf-VuF" firstAttribute="top" secondItem="urC-Yt-tdr" secondAttribute="bottom" constant="144" id="ffs-vR-axO"/>
                             <constraint firstItem="KKc-jg-2gu" firstAttribute="centerX" secondItem="Z3L-mY-73J" secondAttribute="centerX" id="hPO-W8-Vee"/>
+                            <constraint firstItem="BK8-39-5gg" firstAttribute="width" secondItem="Z3L-mY-73J" secondAttribute="width" multiplier="1:2" id="mCZ-Xe-D9Z"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bsI-hN-aEG" appends="YES" id="8cz-7D-q4k"/>
@@ -147,7 +154,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="knobColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.0" green="0.55686274509803924" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Knv-cD-Tjn" firstAttribute="centerX" secondItem="bHw-d8-GK6" secondAttribute="centerX" id="Hcw-Yq-buX"/>
                             <constraint firstItem="RJg-i4-buk" firstAttribute="centerX" secondItem="bHw-d8-GK6" secondAttribute="centerX" id="Xix-8N-c9t"/>
@@ -165,7 +172,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Logout">
                                             <attributes>
-                                                <color key="NSColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="HelveticaNeue"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
