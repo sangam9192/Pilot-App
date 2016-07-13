@@ -22,11 +22,11 @@ class DismissAnimator:NSObject, UIViewControllerAnimatedTransitioning{
         }
         
         containerView.addSubview(toVC.view)
+        containerView.bringSubviewToFront(fromVC.view)
         
         let duration = transitionDuration(transitionContext)
         UIView.animateWithDuration(duration,animations: {
             let frame = fromVC.view.frame
-            containerView.bringSubviewToFront(fromVC.view)
             fromVC.view.frame = CGRect(x: frame.origin.x, y:frame.size.height, width: frame.size.width, height: frame.size.height)
             }, completion: { finished in
                 let cancelled = transitionContext.transitionWasCancelled()
