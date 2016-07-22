@@ -13,6 +13,7 @@ struct Constants{
     static let IS_USER_LOGGED_IN = "isUserLoggedIn"
     static let MAIN = "Main"
     static let LOGIN_SCREEN = "LoginScreen"
+    static let LAUNCH_SCREEN = "LaunchScreen"
     static let HOME_SCREEN = "NavigationController"
     static let OK = "OK"
 }

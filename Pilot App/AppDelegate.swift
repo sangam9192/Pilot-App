@@ -15,12 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        if let username = NSUserDefaults.standardUserDefaults().objectForKey(Constants.USERNAME) as? String{
-            UserUtil.username = username
-        }
+        let launchScreenView = UIStoryboard(name: Constants.LAUNCH_SCREEN, bundle:nil).instantiateViewControllerWithIdentifier(Constants.LAUNCH_SCREEN).view
+        
+        window?.makeKeyAndVisible()
+        window!.addSubview(launchScreenView)
+        window!.bringSubviewToFront(launchScreenView)
+ 
+        
+        let loginVC = UIStoryboard(name: Constants.MAIN, bundle:nil).instantiateViewControllerWithIdentifier(Constants.LOGIN_SCREEN) as! LoginViewController
+
+        window?.rootViewController?.presentViewController(loginVC, animated: true, completion: {
+            let fadeInCompletion:(Bool)->Void = { completed in
+                if completed {
+                    launchScreenView.removeFromSuperview()
+                }
+                if UserUtil.isUserLoggedIn() {
+                    loginVC.dismissViewControllerAnimated(true, completion: nil)
+                }else{
+                    loginVC.showLoginState()
+                }
+            }
+            UIView.animateWithDuration(1, animations: {launchScreenView.alpha=0}, completion:fadeInCompletion)
+        })
         return true
     }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

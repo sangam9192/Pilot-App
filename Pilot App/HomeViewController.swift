@@ -17,9 +17,12 @@ class HomeViewController: UIViewController {
         usernameLabel.text = "\(UserUtil.username)"
     }
     
-    @IBAction func logout(sender: AnyObject) {
+    
+    @IBAction private func logout(sender: AnyObject) {
         UserUtil.logout()
-        showLoginScreen()
+        let loginVC = UIStoryboard(name: Constants.MAIN, bundle:nil).instantiateViewControllerWithIdentifier(Constants.LOGIN_SCREEN) as! LoginViewController
+        loginVC.state = .LOGIN_STATE
+        presentViewController(loginVC, animated: true, completion: nil)
     }
     
 }

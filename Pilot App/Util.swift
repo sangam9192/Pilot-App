@@ -8,18 +8,18 @@
 
 import Foundation
 
-extension String{
-    func isValidEmail() -> Bool {
+enum Util{
+
+    static func isValidEmail(email:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluateWithObject(self)
+        return emailTest.evaluateWithObject(email)
     }
-}
 
-extension String {
-    func isValidPassword() -> Bool {
+    static func isValidPassword(password:String) -> Bool {
         let passwordRegex = "\\w{6,}"
         let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
-        return passwordTest.evaluateWithObject(self)
+        return passwordTest.evaluateWithObject(password)
     }
+
 }

@@ -17,7 +17,6 @@ struct UserUtil{
         username = userName
         NSUserDefaults.standardUserDefaults().setValue(username, forKey: Constants.USERNAME)
         keychain.set(password, forKey: Constants.PASSWORD)
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: Constants.IS_USER_LOGGED_IN)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
         
@@ -28,12 +27,15 @@ struct UserUtil{
     
     static func isUserLoggedIn()->Bool{
         sleep(1)
-        return NSUserDefaults.standardUserDefaults().boolForKey(Constants.IS_USER_LOGGED_IN)
+        if let userName = NSUserDefaults.standardUserDefaults().valueForKey(Constants.USERNAME) as? String{
+            UserUtil.username = userName
+            return true
+        }
+        return false
     }
     
     static func logout(){
         NSUserDefaults.standardUserDefaults().removeObjectForKey(Constants.USERNAME)
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: Constants.IS_USER_LOGGED_IN)
         keychain.delete(Constants.PASSWORD)
     }
     
